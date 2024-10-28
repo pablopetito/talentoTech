@@ -12,58 +12,55 @@
 <body> 
 
     <div id="header"></div>
-     
-    <section>
-        <main class="principal">
-                    
-            <div class="container m-4">
-                <div class="row">
-                    <!-- Card 1 -->
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body d-flex flex-column text-center">
-                                <h5>Resultados en Vivo en el Mundo</h5>
-                            <!--<input type="text" id="team-input" placeholder="Ingrese el nombre del equipo">-->
-                            <button class="btn btn-primary" id="search-vivo-btn">Actualizar Resultados En Vivo</button>
-                            </div>
-                            <div class="">
-                                <ul class="list-group list-group-flush" id="matches-list"></ul>
+    
+    <main class="principal">
+        <section>
+            
+            <article>
+                <div class="container m-4">
+                    <div class="row">
+                                  
+                        <!-- Card 1 -->
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="d-flex flex-column text-center">
+                                    <h6 class="">Resultados en Vivo en el Mundo</h6>
+                                    <!--<input type="text" id="team-input" placeholder="Ingrese el nombre del equipo">-->
+                                    <!-- <button class="btn btn-primary" id="search-vivo-btn">Actualizar Resultados En Vivo</button>-->
+                                    
+                                </div>
+                            
+                                <div class="m-0">
+                                    <ul class="" id="matches-list"></ul>
+                                </div>
+                                <!-- Botón para actualizar los partidos -->
+                                <button id="actualizar-partidos-btn" class="btn btn-primary mt-auto">Actualizar Partidos</button>
                             </div>
                         </div>
-                    </div>
                     
                     <!-- Card 2 -->
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body d-flex flex-column text-center">
-                                <h5 class="card-title">Título 2</h5>
-                                <p class="card-text">Contenido más corto.</p>
-                                <a href="#" class="btn btn-primary mt-auto">Ver más</a>
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column text-center" >
+                                    <h5 class="card-title">Título 3</h5>
+                                    <img class="m-3"   style="width: 200px; height: auto;" src="Imagenes/seleccion78.jpg" alt="Seleccion 1978">
+                                    <img class="mb-3"  style="width: 200px; height: auto;" src="Imagenes/seleccion86.jpg" alt="Seleccion 1986">
+                                    <a href="#" class="btn btn-primary mt-auto">Ver más</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Card 3 -->
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body d-flex flex-column text-center" >
-                                <h5 class="card-title">Título 3</h5>
-                                <p class="card-text">Este es un contenido más largo que podría ocupar más espacio dentro de la tarjeta, pero todas las tarjetas tendrán el mismo alto.</p>
-                                <a href="#" class="btn btn-primary mt-auto">Ver más</a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
-            
-
-
-        </main>
-    </section>
+        </article>
+        </section>
+    </main>
+    
     
     <div id="footer"></div> 
 
     <script src="script.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 

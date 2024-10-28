@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+.encabezado { 
+    background-color: orangered;
+}
+
 .navbar {
     padding-top: 1px !important;   /* Forzar el padding superior */
     padding-bottom: 1px !important; /* Forzar el padding inferior */
@@ -10,13 +14,17 @@
 
 /* Cambiar color a naranja cuando se pasa el cursor por encima */
 .navbar-nav .nav-link:hover {
-    color: orange !important;  /* Cambiar el color del texto a naranja */
+    color: orangered !important;  /* Cambiar el color del texto a naranja */
+}
+
+.container-enca {
+    display: flex;
 }
 
 .titulo {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 24px;
-    color: #434242;
+    color: #ffffff;
     font-weight: bold;
     line-height: 1;
 }
@@ -24,14 +32,15 @@
 .descripcionTit {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 15px;
-    color: orangered;
+    font-weight: bold;
+    color: #000000;
     line-height: 1;
 }
 
 .descripcionTit-2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 10px;
-    color: #434242;
+    color: #000000;
     line-height: 1;
 }
 
@@ -43,10 +52,24 @@
 /* Asegurar que las cards ocupen todo el alto disponible */
 .card-body {
     flex-grow: 1;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
-.partidosVivo {
+.card-text-partido {
     font-size: 12px;
+    align-items: center;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+
+.card-text-liga {
+    font-size: 10px;
+    align-items: start;
+    padding: 0;
+    margin: 0;
 }
 
 .principal {
@@ -62,7 +85,7 @@
 .encabezado {
     height: 15vh;
     margin: 0;  
-    background-color: #434242;
+    background-color: orangered;
     color: rgb(231, 249, 249);
 }
 
@@ -96,11 +119,24 @@ button:hover {
 }
 
 #matches-list {
-    list-style-type: none;
-    padding: 0;
+    max-height: 250px;  /* Limita la altura del contenedor */
+    overflow-y: auto;   /* Barra de desplazamiento si hay muchos partidos */
+    border: 1px solid #ccc;  /* Borde opcional */
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centrar horizontalmente */
+    justify-content: flex-start;  /* Alineación vertical en la parte superior */
+    list-style-type: none;  /* Eliminar los puntos de estilo de los elementos li */
+    padding: 0;             /* Eliminar el padding por defecto del ul */
+}
+
+#matches-list li {
+    margin-bottom: 2px;  /* Ajusta el espacio entre los partidos */
 }
 
 #matches-list-antes {
-    list-style-type: none;
-    padding: 0;
+    max-height: 250px;  /* Ajusta este valor según tus necesidades */
+    overflow-y: auto;   /* Barra de scroll vertical si el contenido excede los 400px */
+    border: 1px solid #ccc;  /* Borde opcional para diferenciar el área de partidos */
+    padding: 10px;      /* Espacio interno para separar el contenido del borde */
 }

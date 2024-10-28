@@ -27,6 +27,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Encontrar el botón en el DOM
+    const actualizarBtn = document.getElementById('actualizar-partidos-btn');
+    // Escuchar el clic del botón para actualizar los partidos
+    if (actualizarBtn) {
+        actualizarBtn.addEventListener('click', function() {
+            searchVivo();  // Llamar a la función que obtiene los partidos en vivo
+        });
+    }
+
+    // Ejecutar la función para cargar los partidos en vivo al cargar la página
+    searchVivo();
+
     function loadHeader() {
         fetch('Encabezado.html')
             .then(response => response.text())
@@ -113,46 +125,65 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(liveFixturesUrl, {
             method: 'GET',
             headers: {
-                'x-apisports-key': apiKey
+                'x-apisports-key': apiKey // Asegúrate de que apiKey esté definido
             }
         })
         .then(response => response.json())
         .then(data => {
+            const liveMatches = data.response || [];
+            const matchesList = document.getElementById('matches-list');
+            matchesList.innerHTML = '';  // Limpiar la lista de partidos anteriores
     
-            const liveMatches = data.response || []; // Usa un array vacío si no hay respuesta
-            const matchesListVivo = document.getElementById('matches-list');
-            matchesListVivo.innerHTML = '';  // Limpiar la lista de partidos anteriores
-
-            console.log('Respuesta de la API:', liveMatches);
+            let fechaAgregada = false;  // Variable de control para agregar la fecha solo una vez
     
             if (liveMatches.length > 0) {
                 liveMatches.forEach(match => {
-                    console.log(`En Vivo: ${match.teams.home.name} ${match.goals.home} - ${match.goals.away} ${match.teams.away.name}`);
-    
-                    const listItem = document.createElement('li');
-                    listItem.classList.add('list-group-item'); // Agregar la clase CSS
-                    
                     // Convertir la fecha del partido a un formato legible
                     const matchDate = new Date(match.fixture.date);
-                    const formattedDate = `${matchDate.getDate().toString().padStart(2, '0')}/${(matchDate.getMonth() + 1).toString().padStart(2, '0')}/${matchDate.getFullYear()} ${matchDate.getHours().toString().padStart(2, '0')}:${matchDate.getMinutes().toString().padStart(2, '0')}`;
+                    //const formattedDate = `${matchDate.getDate().toString().padStart(2, '0')}/${(matchDate.getMonth() + 1).toString().padStart(2, '0')}/${matchDate.getFullYear()} ${matchDate.getHours().toString().padStart(2, '0')}:${matchDate.getMinutes().toString().padStart(2, '0')}`;
+                    const formattedDate = `${matchDate.getDate().toString().padStart(2, '0')}/${(matchDate.getMonth() + 1).toString().padStart(2, '0')}/${matchDate.getFullYear()}`;
     
-                    // Crear el contenido de cada partido con liga, fecha y hora
+                    // Solo agregar la fecha una vez
+                    if (!fechaAgregada) {
+                        const fechaVivoDiv = document.querySelector('.fechaVivo');  // Buscar el div con la clase fechaVivo
+                        if (fechaVivoDiv) {
+                            const dateTitle = document.createElement('p');
+                            dateTitle.textContent = `Fecha del Partido: ${formattedDate}`;  // Texto con la fecha del partido
+                            fechaVivoDiv.appendChild(dateTitle);  // Añadir el p al div "fechaVivo"
+                        }
+                        fechaAgregada = true;  // Cambiar el estado para no volver a agregar la fecha
+                    }
+
+                    // Obtener el tiempo que lleva el partido
+                    const tiempoPartido = match.fixture.status.elapsed || 'N/A';  // Si no hay tiempo, muestra 'N/A'
+    
+                    // Crear un elemento li para cada partido
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('partidosVivo'); // Agregar la clase CSS
+    
+                    // Rellenar el contenido del li con el detalle del partido
                     listItem.innerHTML = `
-                        <p>${match.teams.home.name} ${match.goals.home} - ${match.goals.away} ${match.teams.away.name}</p>
-                        <p><strong>Liga:</strong> ${match.league.name}</p>
-                        <p><strong>Fecha y Hora:</strong> ${formattedDate}</p>
+                         <div class="card-body text-center"> <!-- Centramos el contenido del card -->
+                            <p class="card-text-partido">${match.teams.home.name} ${match.goals.home} - ${match.goals.away} ${match.teams.away.name}</h5>
+                            <div class="d-flex justify-content-center">
+                                <p class="card-text-liga me-2 small"><strong>Tiempo:</strong> ${tiempoPartido} minutos</p> <!-- Mostrar el tiempo -->
+                                <p class="card-text-liga small"><strong>Liga:</strong> ${match.league.name}</p> <!-- Mostrar la liga -->
+                            </div>
+                        </div>
                     `;
-                    matchesListVivo.appendChild(listItem);
+    
+                    matchesList.appendChild(listItem); // Añadir el li dentro del listado de partidos
                 });
             } else {
                 const noMatchesItem = document.createElement('li');
                 noMatchesItem.textContent = "No hay partidos en vivo en esta liga.";
-                matchesListVivo.appendChild(noMatchesItem);
+                matchesList.appendChild(noMatchesItem);
             }
         })
         .catch(error => console.error('Error al obtener los partidos en vivo:', error));
     }
     
+        
     function tablaPos(leagueId) {
         const standingsUrl = `https://v3.football.api-sports.io/standings?league=128&season=2024`;  // La Liga (ID: 140), Temporada 2023
 
