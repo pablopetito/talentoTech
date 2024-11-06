@@ -163,13 +163,22 @@ document.addEventListener('DOMContentLoaded', function() {
     
                     // Rellenar el contenido del li con el detalle del partido
                     listItem.innerHTML = `
-                         <div class="card-body text-center"> <!-- Centramos el contenido del card -->
-                            <p class="card-text-partido">${match.teams.home.name} ${match.goals.home} - ${match.goals.away} ${match.teams.away.name}</h5>
-                            <div class="d-flex justify-content-center">
-                                <p class="card-text-liga me-2 small"><strong>Tiempo:</strong> ${tiempoPartido} minutos</p> <!-- Mostrar el tiempo -->
-                                <p class="card-text-liga small"><strong>Liga:</strong> ${match.league.name}</p> <!-- Mostrar la liga -->
+                    <div class="card-body text-center">
+                        <div class="row g-1 border-bottom border-white">
+                            <div class="col-12 bg-dark text-white pt-2">
+                                <p class="card-text-partido">${match.teams.home.name} ${match.goals.home} - ${match.goals.away} ${match.teams.away.name}</h5>
                             </div>
                         </div>
+                        
+                        <div class="row g-1">
+                            <div class="col-6 bg-secondary text-white border-end border-white pt-3">
+                                <p class="text-tiempo-liga me-2 small">${tiempoPartido} minutos</p> 
+                            </div>
+                            <div class="col-6 bg-secondary text-white pt-3">
+                                <p class="text-tiempo-liga small">${match.league.name}</p>
+                            </div>
+                        </div>
+                    </div>
                     `;
     
                     matchesList.appendChild(listItem); // Añadir el li dentro del listado de partidos
