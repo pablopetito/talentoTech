@@ -7,34 +7,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- GOOGLE FONTs -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- ANIMATE CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Encabezado de la página -->
     <header>
         
-        <div class="container-fluid encabezado py-3">
-        
-            <div class="container-enca">
+        <div class="container-fluid py-3">
             
-                <!--- Imagen LOGO -->
-                <div class="me-3 ms-3">
-                    <img class="imgLog" src="Imagenes/afa.png" alt="Escudo AFA">
-                </div>
-                
-                <!-- Título y descripción -->
+            <div class="container-enca">
                 <div>
+                    <!--- Imagen LOGO -->
+                    <div class="me-3 ms-3">
+                        <img class="imgLog" src="Imagenes/afa.png" alt="Escudo AFA">
+                    </div>
+                    
+                    <!-- Título y descripción -->
+                    <div>
                         <p class="mb-0 mt-2 titulo">TABLERO FUTBOLERO ARGENTINO</p>
                         <p class="mb-0 descripcionTit text-center">estadísticas y más estadísticas</p>
                         <p class="text-end mb-0 descripcionTit-2">powered by Talento Tech</p>
-                </div>    
-            
+                    </div>
+                </div>
+                
+                <!-- Enlaces -->
+                <div class="text-end">
+                    <a class="boton-verde" href="#">
+                        <p class=""><span class="">Ingresar</span></p>
+                    </a>
+                    <a class="boton-naranja" href="#">
+                        <p class=""><span class="">Registrarse</span></p>
+                    </a>
+                    <a class="boton-rojo" href="#">
+                        <p class=""><span class="">Cerrar Sesion</span></p>
+                    </a>                    
+                </div>
             </div>
             
+                        
         </div>
 
         <!-- Navegación usando navbar de Bootstrap -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-white"> 
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -48,8 +68,8 @@
                             <li class="nav-item"><a class="nav-link" href="#">Primera "C"</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Liga Amateur</a></li>
                             <li class="nav-item"><a class="nav-link" href="#">Liga Federal</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">Acerca de</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
                         </ul>
                     </div>
                 </div>
@@ -76,52 +96,136 @@
         </section>
 
         <section id="segunda">
-            <h2>Segunda Seccion</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore architecto doloremque dicta labore 
-                aperiam maxime voluptas reiciendis laboriosam expedita? Ratione tempora suscipit provident. 
-                Ut deserunt quos facilis mollitia iusto? Vero?   Me llamo Juan, soy desarrollador web con pasión por
-                crear experiencias visuales únicas.</p>
+            <h2>Tableros Estadisticos </h2>
+            <p>Plataforma digital de información y análisis independiente relacionada con el Futbol Argentino. 
+            Series estadísticas, índices, herramientas interactivas, artículos en el area deportiva y comercial.</p>
+            <div class="text-center">
+                <img style="width: 350px; height: 200px; align-items: center;" src="/Proyecto_Integrador/Imagenes/Tablero.jpeg" alt="tablerofutbolero">
+            </div>
         </section>
 
         <section id="terceca">
-            <h2>Tercera Seccion</h2>
+            <h2>Informaciones Utiles</h2>
             <article>
-                <h3>Articulo 1</h3>
+                <h4>Tecnologia GPS </h4>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id molestias hic tempora veniam odio,
                    soluta excepturi vitae voluptate aut sunt! Expedita sit magni consequatur aspernatur minima, 
                    laboriosam totam nostrum maxime!Descripción del proyecto 1.</p>
             </article>
             <article>
-                <h3>Articulo 2</h3>
+                <h4>Inteligencia Artificial en un Partido</h4>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id molestias hic tempora veniam odio,
                     soluta excepturi vitae voluptate aut sunt! Expedita sit magni consequatur aspernatur minima, 
                     laboriosam totam nostrum maxime!Descripción del proyecto 1.</p>
             </article>
         </section>
 
-        <section id="Resenas">
-            <h2>Resenas</h2>
-            <article>
-                <h3>Última Entrada</h3>
-                <p>Explorando las mejores prácticas en desarrollo web.</p>
-            </article>
+        <section id="terceca">
+            <h2>Mejor Partido de la Semana</h2>
+            <div class="video-responsive">
+                <iframe 
+                    src="https://www.youtube.com/embed/1rJ-9b2c5-M?si=XTHlfRobn7F5DuIF" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <form>
-                <label for="nombre">Apellido y Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
     </main>
+
+    <section class="text-center" id="Resenas">
+        <h4>Reseñas y Comentarios de Usuarios</h4>
+        <article>
+            <p>20/10/2024 Última Entrada</p>
+            <p>
+                <i class="fas fa-star" style="color: #FFD700;"></i>
+                <i class="fas fa-star" style="color: #FFD700;"></i>
+                <i class="fas fa-star" style="color: #FFD700;"></i>
+                <i class="fas fa-star" style="color: #FFD700;"></i>
+                Santiago: Excelentes datos, para recomendar
+            </p>
+
+        </article>
+    </section>
 
     <!-- Pie de página -->
     <footer>
-        <p>&copy; TABLERO FUTBOLERO ARGENTINO</p>
+
+        <div class="contact-wrapper animated bounceInUp">
+            
+            
+            <div id="about" class="contact-info">
+                <h4>Mas Informacion en</h4>
+                
+                                    <!-- Facebook -->
+                                    <i class="fab fa-facebook"></i>
+
+                                    <!-- Twitter -->
+                                    <i class="fab fa-twitter"></i>
+                
+                                    <!-- Instagram -->
+                                    <i class="fab fa-instagram"></i>
+                                
+                                    <!-- LinkedIn -->
+                                    <i class="fab fa-linkedin"></i>
+                
+                                    <!-- YouTube -->
+                                    <i class="fab fa-youtube"></i>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Ciudad Autonoma de Buenos Aires</li>
+                    <li><i class="fas fa-phone"></i> (11) 5490 XXXX</li>
+                    <li><i class="fas fa-envelope-open-text"></i> contacto@tablerofutbolero.com</li>
+                </ul>
+                
+                <div class="text-center">
+                
+                Membresia de <br>
+                Estadisticas del futbol Argentino<br>
+                de hoy y de siempre<br>
+                Data Science para estrategias<br>
+                deportivas y comerciales<br><br>
+                www.tablerofutbolero.ar
+                </div>
+
+            </div>
+            
+            <div  id="contact" class="contact-form">
+                <h3>Contacto</h3>
+                <form action="">
+                    <p>
+                        <label>FullName</label>
+                        <input type="text" name="fullname">
+                    </p>
+                    <p>
+                        <label>Email Adress</label>
+                        <input type="email" name="email">
+                    </p>
+                    <p>
+                        <label>Phone Number</label>
+                        <input type="tel" name="phone">
+                    </p>
+                    <p>
+                        <label>Affair</label>
+                        <input type="text" name="affair">
+                    </p>
+                    <p class="block">
+                       <label>Message</label> 
+                        <textarea name="message" rows="3"></textarea>
+                    </p>
+                    <p class="block">
+                        <button>
+                            Send
+                        </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <p class="logo">&copy; 2024 Pablo Sergio Petito | Talento Tech </p>
+
     </footer>
 
     <!-- scripts API Football -->

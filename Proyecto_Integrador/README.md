@@ -22,6 +22,7 @@ COLORES DEL SITIO
 Estilos de Letras
     Titulos: font-family: 'Roboto Slab', serif
     Letra del Cuerpo: font-family: 'Lora', serif
+    Otras: 'Quicksand'
 
 
 
