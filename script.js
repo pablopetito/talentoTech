@@ -2,6 +2,27 @@
 const apiKey = 'f842652436381d80af379e36d891f6d1';
 
 document.addEventListener('DOMContentLoaded', function() {
+    // funciones y llamadas para cargar header y footer
+    function loadHeader() {
+        fetch('Encabezado.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            })
+            .catch(error => console.log('Error cargando el encabezado:', error));
+    }
+
+    function loadFooter() {
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(error => console.log('Error cargando el pie de página:', error));
+    }
+    loadHeader();
+    loadFooter();
+
     // Ejecutar funciones para cargar los datos al iniciar la página
     searchVivo();
     searchMatches('next'); // Próximos partidos
@@ -36,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Función de búsqueda de partidos
+    //funcion BUSCAR FIXTURE PARTIDOS ANTERIORES Y PROXIMOS 
     function searchMatches(type) {
         const fixturesUrl = 'https://v3.football.api-sports.io/fixtures';
 
@@ -98,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    //funcion BUSCAR PARTIDOS EN VIVO EN EL MUNDO 
     function searchVivo() {
         const liveFixturesUrl = `https://v3.football.api-sports.io/fixtures?live=all`;
 

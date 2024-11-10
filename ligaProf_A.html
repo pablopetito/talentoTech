@@ -10,41 +10,40 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
 <body>        
-    <section>
+
+    <div id="header"></div> <!-- Aquí se insertará el encabezado -->
+
+
         <main class="container text-center">
-                <div class="row">
-                    <div>
-                        LIGA PROFESIONAL DE FUTBOL ARGENTINO "A"
-                    </div>
-                </div>
 
-                <div class="row">
-                  
-                    <div class="col">
-                        <button id="search-upcoming-btn">Próximos Partidos</button>
-                        <div id="match-info-proximo" class="hidden">
-                            <h3>Próximos Partidos</h3>
-                            <ul id="matches-list-proximo"></ul>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <button id="search-results-btn">Resultados Anteriores</button>
-                        <div id="match-info-antes" class="hidden">
-                            <h2><span id="team-name"></span></h2>
-                            <ul id="matches-list-antes"></ul>
-                        </div>
-                    </div>
-                </div>
-
-        </main>
-        
-            <div id="match-info-proximo" class="hidden">
-                <h3>Próximos Partidos</h3>
-                <ul id="matches-list-proximo"></ul>
+            <div class="titulo-pagina-secund text-center">
+                <p class="text-center"> LIGA PROFESIONAL DE FUTBOL ARGENTINO | "A"</p>
             </div>
         
-    </section>
+        </main>
+          
+        <section>
+
+                <div id="" class="hidden">
+                    <h3 class="text-center">TABLA DE POSICIONES</h3>
+                </div>
+    
+                <div id="match-info-proximo" class="hidden">
+                          <h3>Próximos Partidos</h3>
+                            <ul id="matches-list-proximo"></ul>
+                </div>
+                
+                <div>
+                    <div id="match-info-antes" class="hidden">
+                        <h3>Próximos Anteriores</h3>
+                        <h2><span id="team-name"></span></h2>
+                        <ul id="matches-list-antes"></ul>
+                    </div>
+                </div>
+            
+        </section>    
+
+    <div id="footer"></div> <!-- Aquí se insertará el encabezado -->
      
     <script src="script.js"></script>
 </body>
