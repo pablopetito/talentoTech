@@ -19,10 +19,31 @@ COLORES DEL SITIO
 
     footer  #333:dark
 
+    Botones  #a20303 Rojo
+             #028642 Verde
+             #fc9d0e Anaranjado
+
 Estilos de Letras
     Titulos: font-family: 'Roboto Slab', serif
     Letra del Cuerpo: font-family: 'Lora', serif
     Otras: 'Quicksand'
 
+APP ESTADISTICAS DEL FUTBOL ARGENTINO 
 
+# Objetivo
+Membresia de Estadisticas del futbol Argentino actuales y pasadas desde los inicio del futbol
+
+Data Science para estrategias deportivas y comerciales 
+
+# Destinatarios 
+    * Dirigentes de Clubs 
+    * Directores Tecnicos 
+    * Profesores de Educacion Fisica
+    * Personal Training 
+    * Jugadores 
+    * Periodistas 
+
+# Monetizacion de la APP
+    * Membresias Perpetuas, Anuales, Mensuales y Especifica
+    * Avisos Comerciales
 
