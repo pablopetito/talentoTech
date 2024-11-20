@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     searchVivo();
     searchMatches('next'); // Próximos partidos
     searchMatches('last'); // Resultados anteriores
+    tablaPos(128); // Tabla Posiciones 
 
     // Botones de búsqueda (API Fútbol)
     const upcomingBtn = document.getElementById('search-upcoming-btn');
@@ -188,4 +189,56 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error al obtener los partidos en vivo:', error));
     }
+
+    function tablaPos(leagueId) {
+        const standingsUrl = `https://v3.football.api-sports.io/standings?league=${leagueId}&season=2022`;
+    
+        fetch(standingsUrl, {
+            method: 'GET',
+            headers: {
+                'x-apisports-key': apiKey
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Respuesta completa de la API:', data);
+    
+            // Verificar si la respuesta contiene standings
+            const standings = data.response?.[0]?.league?.standings?.[0];
+            if (!standings) {
+                console.error('No se encontraron datos de standings en la respuesta');
+                return;
+            }
+    
+            // Seleccionar el cuerpo de la tabla
+            const standingsTableBody = document.querySelector('#standings-table tbody');
+            if (!standingsTableBody) {
+                console.error('El contenedor para la tabla no existe en el HTML');
+                return;
+            }
+    
+            standingsTableBody.innerHTML = ''; // Limpiar contenido previo
+    
+            // Generar las filas de la tabla
+            standings.forEach(team => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${team.rank}</td>
+                    <td>${team.team.name}</td>
+                    <td>${team.points}</td>
+                    <td>${team.all.played}</td>
+                    <td>${team.all.win}</td>
+                    <td>${team.all.draw}</td>
+                    <td>${team.all.lose}</td>
+                    <td>${team.all.goals.for}</td>
+                    <td>${team.all.goals.against}</td>
+                `;
+                standingsTableBody.appendChild(row);
+            });
+        })
+        .catch(error => console.error('Error al obtener los standings:', error));
+    }
+    
+    
+
 });

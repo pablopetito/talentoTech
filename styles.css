@@ -917,6 +917,88 @@ ul {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .titulo-ligaA {
+        margin-top: 170px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .contenido-ligaA {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+        background-color:  #f1f1f1;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+        grid-template-rows: auto; /* Altura automática para las filas */
+        gap: 10px; /* Espacio entre filas y columnas */
+    }
+    
+    .item1 {
+        grid-column: 1 / -1; /* Hace que la celda abarque ambas columnas (toda la fila) */
+    }
+    
+    .item2 {
+        grid-column: 1; /* Primera columna */
+    }
+    
+    .item3 {
+        grid-column: 2; /* Segunda columna */
+    }
+    
+    .item4 {
+        grid-column: 1; /* Primera columna */
+    }
+    
+    .item5 {
+        grid-column: 2; /* Segunda columna */
+    }
+
+        /* Estilo general de la tabla */
+    #standings-table {
+        table-layout: fixed; /* Forzar que las columnas respeten el ancho asignado */
+        width: 50%;         /* La tabla ocupa el 100% del contenedor */
+        margin: 0 auto; 
+        font-size: 14px;
+    }
+
+    /* Asignar anchos específicos a las columnas */
+    #standings-table th:nth-child(1), 
+    #standings-table td:nth-child(1) {
+        width: 50px; /* Columna de la posición */
+        text-align: center;
+    }
+
+    #standings-table th:nth-child(2), 
+    #standings-table td:nth-child(2) {
+        width: 150px; /* Columna del equipo */
+    }
+
+    #standings-table th:nth-child(3), 
+    #standings-table td:nth-child(3) {
+        width: 60px; /* Columna de puntos */
+        text-align: center;
+    }
+    
+    #standings-table th, #standings-table td {
+        line-height: 0.8; /* Ajustar el alto de las líneas de texto */
+        padding: 10px 8px; /* Espaciado interno en las celdas */
+        text-align: center; /* Centrar horizontalmente */
+        vertical-align: middle; /* Centrar verticalmente */
+        overflow: hidden; /* Ocultar contenido que se salga del ancho */
+        text-overflow: ellipsis; /* Cortar texto largo con "..." */
+        white-space: nowrap; /* Evitar que el texto se envuelva */
+    }
+    
+    #standings-table th:nth-child(2), 
+    #standings-table td:nth-child(2) {
+        text-align: left; /* Alinear el nombre del equipo a la izquierda */
+    }
+
     /* Fuente texto cuerpo */
     body {
         font-family: 'Lora', serif;
