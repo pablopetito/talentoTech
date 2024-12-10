@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    //funcion BUSCAR PARTIDOS EN VIVO EN EL MUNDO 
+    //funcion BUSCAR PARTIDOS EN VIVO EN EL MUNDO `https://v3.football.api-sports.io/fixtures?live=all` 
     function searchVivo() {
         const countryName = "Argentina"
-        const liveFixturesUrl = `https://v3.football.api-sports.io/fixtures?live=all`;
+        const liveFixturesUrl = `https://v3.football.api-sports.io/fixtures?league=128&season=2022`;
         fetch(liveFixturesUrl, {
             method: 'GET',
             headers: {
@@ -27,13 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(response => response.json())
         .then(data => {
-            const matches = data.response.filter(match => match.league.country === 'Argentina');
+            const matches = data.response.filter(match => match.league.country);
             const liveMatches = matches || [];
             const matchesList = document.getElementById('matches-list');
-            console.log("Por aca voy")
-            console.log(data.response)
-
-            console.log(data.response[0].events[0])           
+            console.log("Datos Recibido de Fetch:", data.response)
 
 
            if (matchesList) {
@@ -68,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                         <p class="card-text-partido">${match.teams.home.name} ${match.goals.home} - ${match.goals.away} ${match.teams.away.name}</p>
                                     </div>
                                 </div>
-                                <div class="row g-1">
+                                <div class="row h-auto g-1">
                                     <div class="col-6 bg-secondary text-white border-end border-white pt-3">
                                         <p class="text-tiempo-liga me-2 small">${tiempoPartido} minutos</p>
                                     </div>
@@ -83,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     });
                 } else {
                     const noMatchesItem = document.createElement('li');
-                    noMatchesItem.textContent = "No hay partidos en vivo en estos momento en las liga Argentina";
+                    noMatchesItem.textContent = "No se esta jugando ningun partido en estos momento";
                     matchesList.appendChild(noMatchesItem);
                 }
             }
