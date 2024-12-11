@@ -37,16 +37,9 @@
                 </div>
                 
                 <!-- Enlaces -->
-                <div class="text-end">
-                    <a class="boton-verde" href="#">
-                        <p class=""><span class="">Ingresar</span></p>
-                    </a>
-                    <a class="boton-naranja" href="#">
-                        <p class=""><span class="">Registrarse</span></p>
-                    </a>
-                    <a class="boton-rojo" href="#">
-                        <p class=""><span class="">Cerrar Sesion</span></p>
-                    </a>                    
+                <div class="text-end">   
+                    <button class="action-button boton-verde" id="openLoginModal">Ingresar</button>
+                    <button class="action-button boton-naranja" id="openRegisterModal">Registrarse</button>                
                 </div>
             </div>
             
@@ -231,6 +224,71 @@
         <p class="logo">&copy; 2024 Pablo Sergio Petito | Talento Tech </p>
 
     </footer>
+
+    <!-- Modal de Login -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            
+            <h5>INGRESE A SU CUENTA</h5>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Nombre de usuario" required />
+                <input type="password" id="loginPassword" placeholder="Contraseña" required />
+                
+                <div class="row">
+                    <div class="col-6">
+                        <button class="mt-2 w-100 boton-verde" type="submit">Ingresar</button>
+                    </div>
+                    
+                    <div class="col-6">
+                        <button class="mt-2 w-100 boton-naranja" type="submit">Registrarse</button>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">            
+                        <button class="mt-4 w-100 boton-rojo" id="closeLoginModal">Cerrar</button>
+                    </div>
+                </div>
+                
+                <p class="error" id="loginErrorMessage"></p>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Modal de Registro -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            
+            <h5>REGISTRE SU CUENTA</h5>
+            <form id="registerForm">
+                <input type="text" id="registerUsername" placeholder="Nombre de usuario" required />
+                <input type="email" id="registerEmail" placeholder="Correo electrónico" required />
+                <input type="password" id="registerPassword" placeholder="Contraseña" required />
+
+                <div class="row">
+                    <div class="col-6">
+                        <button class="mt-2 w-100 boton-verde" type="submit">Ingresar</button>
+                    </div>
+                    
+                    <div class="col-6">
+                        <button class="mt-2 w-100 boton-naranja" type="submit">Registrarse</button>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">            
+                        <button class="mt-4 w-100 boton-rojo" id="closeRegisterModal">Cerrar</button>
+                    </div>
+                </div>
+
+                <p class="error" id="registerErrorMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- scripts LOGIN -->
+    <script src="scriptLogin.js"></script>
 
     <!-- scripts API Football -->
     <script src="script.js"></script>

@@ -61,16 +61,16 @@ document.addEventListener('DOMContentLoaded', function() {
                         listItem.innerHTML = `
                             <div class="card-body text-center">
                                 <div class="row g-1 border-bottom border-white">
-                                    <div class="col-12 bg-dark text-white pt-2">
-                                        <p class="card-text-partido">${match.teams.home.name} ${match.goals.home} - ${match.goals.away} ${match.teams.away.name}</p>
+                                    <div class="col-12 bg-dark text-white">
+                                        <p class="card-text-partido mb-0">${match.teams.home.name} ${match.goals.home} - ${match.goals.away} ${match.teams.away.name}</p>
                                     </div>
                                 </div>
-                                <div class="row h-auto g-1">
-                                    <div class="col-6 bg-secondary text-white border-end border-white pt-3">
-                                        <p class="text-tiempo-liga me-2 small">${tiempoPartido} minutos</p>
+                                <div class="row g-1">
+                                    <div class="col-6 bg-secondary text-white border-end border-white">
+                                        <p class="text-tiempo-liga me-2 small mb-0">${tiempoPartido} minutos</p>
                                     </div>
-                                    <div class="col-6 bg-secondary text-white pt-3">
-                                        <p class="text-tiempo-liga small">${match.league.name}</p>
+                                    <div class="col-6 bg-secondary text-white">
+                                        <p class="text-tiempo-liga small mb-0">${match.league.name}</p>
                                     </div>
                                 </div>
                             </div>
