@@ -1,0 +1,40 @@
+.card {
+    background-color: #f1f1f1;
+    border: 1px solid #333333;
+    height: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.btn-plan {
+    background-color: #03761e;
+    color: white;
+}
+
+.btn-plan:hover {
+    background-color: #03761e;
+}
+
+.card-icon {
+    font-size: 3rem;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+
+.card-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #333333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.divPrincipal {
+    margin-top: 150px;
+
+}

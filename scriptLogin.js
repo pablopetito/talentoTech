@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeLoginModalButton = document.getElementById("closeLoginModal");
     const openRegisterModalButton = document.getElementById("openRegisterModal");
     const closeRegisterModalButton = document.getElementById("closeRegisterModal");
-    
+
     // Formularios
     const loginForm = document.getElementById("loginForm");
     const registerForm = document.getElementById("registerForm");
@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mensajes de error
     const loginErrorMessage = document.getElementById("loginErrorMessage");
     const registerErrorMessage = document.getElementById("registerErrorMessage");
- 
+
     // Referencias a elementos
     const userSection = document.getElementById("userSection");
-   
+
     // Verificar si el usuario ya está logueado (usando LocalStorage)
     const storedUsername = localStorage.getItem("username");
     if (storedUsername) {
@@ -53,12 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cerrar los modales si se hace clic fuera de ellos
     window.addEventListener("click", (event) => {
-            if (event.target === loginModal) {
-                loginModal.style.display = "none";
-            }
-            if (event.target === registerModal) {
-                registerModal.style.display = "none";
-            }
+        if (event.target === loginModal) {
+            loginModal.style.display = "none";
+        }
+        if (event.target === registerModal) {
+            registerModal.style.display = "none";
+        }
     });
 
     // Manejar el inicio de sesión
@@ -105,22 +105,22 @@ document.addEventListener("DOMContentLoaded", () => {
         // Añadir funcionalidad al botón de "Cerrar sesión"
         const logoutButton = document.getElementById("logoutButton");
         logoutButton.addEventListener("click", () => {
-                // 1. Eliminar el nombre de usuario almacenado en LocalStorage
-                localStorage.removeItem("username"); 
+            // 1. Eliminar el nombre de usuario almacenado en LocalStorage
+            localStorage.removeItem("username");
 
-                // 2. Limpiar los campos del formulario de login
-                document.getElementById("loginUsername").value = ""; // Limpiar nombre de usuario
-                document.getElementById("loginPassword").value = ""; // Limpiar contraseña
+            // 2. Limpiar los campos del formulario de login
+            document.getElementById("loginUsername").value = ""; // Limpiar nombre de usuario
+            document.getElementById("loginPassword").value = ""; // Limpiar contraseña
 
-                // 3. Volver a mostrar el botón de "Ingresar"
-                userSection.innerHTML = `<button class="action-button boton-verde" id="openLoginModal">Ingresar</button>
+            // 3. Volver a mostrar el botón de "Ingresar"
+            userSection.innerHTML = `<button class="action-button boton-verde" id="openLoginModal">Ingresar</button>
                                         <button class="action-button boton-naranja" id="openRegisterModal">Registrarse</button>        
                         `;
 
-                // 4. Asociar nuevamente el evento para abrir el modal
-                document.getElementById("openLoginModal").addEventListener("click", () => {
-                    loginModal.style.display = "flex";
-                });
+            // 4. Asociar nuevamente el evento para abrir el modal
+            document.getElementById("openLoginModal").addEventListener("click", () => {
+                loginModal.style.display = "flex";
+            });
         });
-    }     
+    }
 });
