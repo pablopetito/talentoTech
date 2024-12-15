@@ -24,13 +24,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         console.log(planes);
 
-        const arrayO = document.getElementById('arrayObjetos');
+        const arrayO = document.getElementById('card-planes');
         arrayO.innerHTML = ''; // Limpiar la lista de partidos anteriores
 
         planes.forEach(plan => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `<p class="fs-6 m-2">${plan.titulo} | ${plan.descripcion} | ${plan.costo} | ${plan.icono}</p>`;
-            arrayO.appendChild(listItem);
+            const card = document.createElement('div');
+            card.className = 'col-lg-4 col-md-6 col-sm-12 mb-4'; // Clases para columnas y espaciado
+            card.innerHTML = `
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="${plan.icono} card-icon"></i>
+                        <h5 class="card-title">${plan.titulo}</h5>
+                        <p class="card-text">${plan.descripcion}</p>
+                        <p class="card-price">${plan.costo}</p>
+                        <button class="btn btn-plan">Elegir Plan</button>
+                    </div>
+                </div>
+            `;
+            arrayO.appendChild(card);
         })
     }
 

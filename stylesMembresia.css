@@ -20,9 +20,9 @@
 }
 
 .card-icon {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #333333;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 .card-price {
@@ -64,4 +64,9 @@
 
   .azul-claro {
     background-color: rgb(22, 22, 239);
+  }
+
+  .ul-membresia {
+    list-style: none;
+    padding: 0;
   }
