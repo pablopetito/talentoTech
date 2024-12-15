@@ -25,7 +25,6 @@
     margin-bottom: 15px;
 }
 
-
 .card-price {
     font-size: 1.5rem;
     font-weight: bold;
@@ -36,5 +35,33 @@
 
 .divPrincipal {
     margin-top: 150px;
-
 }
+
+/* Hacer la tabla responsive */
+.table-responsive {
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    -webkit-overflow-scrolling: touch; /* Mejora para scroll en dispositivos táctiles */
+  }
+  
+  .table {
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    text-align: center; /* Centrar el contenido de las celdas */
+    vertical-align: middle;
+    white-space: nowrap; /* Evita saltos de línea */
+    overflow: hidden;    /* Oculta el texto que se sale del límite */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos al texto recortado */
+  }
+
+  .azul {
+    background-color: rgb(5, 5, 189);
+  }
+
+  .azul-claro {
+    background-color: rgb(22, 22, 239);
+  }

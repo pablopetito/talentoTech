@@ -9,6 +9,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="stylesMembresia.css">
 </head>
 
 <body>
@@ -66,63 +67,68 @@
 
     </header>
 
+    <div class="container  divPrincipal py-5">
+        <h1 class="text-center mb-4">LIGA PROFESIONAL DE FUTBOL ARGENTINO | "A"</h1>
+        <div class="row d-flex row-cols-1 row-cols-md-1 row-cols-lg-2 g-6">
+            
+                <section id="tabla">
 
-    <div class="container">
+                    <div class="col">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
 
-        <div class="titulo-ligaA text-center">
-            <p class="text-center text-dark"> LIGA PROFESIONAL DE FUTBOL ARGENTINO | "A"</p>
-        </div>
+                                <h5 class="text-center">TABLA DE POSICIONES | Temporada 2022</h5>
 
-        <div class="grid-container">
-            <div class="item1 text-center">
-
-                <section id="tabla text-center">
-
-                    <div id="" class="hidden">
-                        <h5 class="text-center">TABLA DE POSICIONES | Temporada 2022</h5>
+                                <!-- Contenedor para hacer la tabla responsive -->
+                                <div class="table-responsive">
+                                    <table id="standings-table" class="table table-striped table-dark">
+                                        <thead>
+                                            <tr>
+                                                <th>Pos</th>
+                                                <th>Equipo</th>
+                                                <th>Pts</th>
+                                                <th>PJ</th>
+                                                <th>PG</th>
+                                                <th>PE</th>
+                                                <th>PP</th>
+                                                <th>GF</th>
+                                                <th>GC</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Filas de la tabla se insertan por JavaScript -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <table id="standings-table" class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Pos</th>
-                                <th>Equipo</th>
-                                <th>Pts</th>
-                                <th>PJ</th>
-                                <th>PG</th>
-                                <th>PE</th>
-                                <th>PP</th>
-                                <th>GF</th>
-                                <th>GC</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- filas de la tabla se insertan por js -->
-                        </tbody>
-                    </table>
-
                 </section>
-            </div>
 
-            <div class="item2">
-
+                <!--  partidos de la temporada-->
                 <section id="proximos-partidos">
-                    <div id="match-info-proximo" class="hidden">
-                        <h5 class="text-center">Partidos Jugados en la Temporada</h5>
+                    <div class="col">
+
+                        <div class="card h-100 text-center">
+                            <div class="card-body h-100">
+                                <div class="item2 h-100">
+                                    <div id="match-info-proximo">
+                                        <h5 class="text-center">Partidos Jugados en la Temporada</h5>
+                                    </div>
+                                    <div class="m-0 h-100">
+                                        <ul class="ul-liga" id="matches-list-proximo"></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
-
-                    <div class="m-0">
-                        <ul class="" id="matches-list-proximo"></ul>
-                    </div>
-
                 </section>
-
-            </div>
-
+    
         </div>
-
     </div>
+
     <!-- footer.html -->
     <footer>
 
@@ -207,6 +213,9 @@
         <div class="modal-content">
 
             <h5>INGRESE A SU CUENTA</h5>
+
+            <p><span class="badge badge-dark bg-dark">usuario: talento | contraseña: talento</span></p>
+
             <form id="loginForm">
                 <input class="input-Login" type="text" id="loginUsername" placeholder="Nombre de usuario" required />
                 <input class="input-Login" type="password" id="loginPassword" placeholder="Contraseña" required />

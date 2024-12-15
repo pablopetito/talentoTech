@@ -6,40 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //loadHeader();
     //loadFooter();
 
-    function membresiasAbono() {
-        const planes = [
-            {
-                titulo: "Plan Free",
-                descripcion: "Acceso básico a los resultados deportivos.",
-                costo: "$0,00",
-                icono: "fas fa-user"
-            },
-            {
-                titulo: "Plan Básico",
-                descripcion: "Funciones adicionales y estadísticas detalladas.",
-                costo: "$5.000,00",
-                icono: "fas fa-chart-line"
-            },
-            {
-                titulo: "Plan Premium",
-                descripcion: "Acceso completo a todos los servicios y beneficios exclusivos.",
-                costo: "$10.000,00",
-                icono: "fas fa-crown"
-            }
-        ]
-
-        console.log(planes);
-
-        const arrayO = document.getElementById('arrayObjetos');
-        arrayO.innerHTML = ''; // Limpiar la lista de partidos anteriores
-
-        planes.forEach(plan => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `<p class="fs-6 m-2">${plan.titulo} | ${plan.descripcion} | ${plan.costo} | ${plan.icono}</p>`;
-            arrayO.appendChild(listItem);
-        })
-    }
-
     // funciones y llamadas para cargar header y footer
     function loadHeader() {
         fetch('Encabezado.html')
@@ -65,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function () {
     partidoTemporadas()
     tablaPos(128)
     status()
-    membresiasAbono()
 
     const actualizarBtn = document.getElementById('actualizar-partidos-btn');
     if (actualizarBtn) {
@@ -194,10 +159,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             // Alternar colores basados en el número de elementos existentes en la lista
                             if (matchesList.children.length % 2 === 0) {
                                 // Índice par: agregar clase para un color
-                                listItem.classList.add('bg-dark'); // Clase Bootstrap para fondo claro
+                                listItem.classList.add('azul'); // Clase Bootstrap para fondo claro
                             } else {
                                 // Índice impar: agregar clase para otro color
-                                listItem.classList.add('bg-secondary'); // Clase Bootstrap para fondo gris oscuro
+                                listItem.classList.add('azul-claro'); // Clase Bootstrap para fondo gris oscuro
                             }
 
                             listItem.innerHTML = `

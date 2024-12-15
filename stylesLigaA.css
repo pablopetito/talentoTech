@@ -1,0 +1,70 @@
+/* Contenedor principal */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas grandes */
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Esto estira los elementos internos para ocupar toda la altura */
+  }
+
+  /* Hacer la tabla responsive */
+  .table-responsive {
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    -webkit-overflow-scrolling: touch; /* Mejora para scroll en dispositivos táctiles */
+  }
+  
+  .table {
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho del contenedor */
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    text-align: center; /* Centrar el contenido de las celdas */
+    vertical-align: middle;
+    white-space: nowrap; /* Evita saltos de línea */
+    overflow: hidden;    /* Oculta el texto que se sale del límite */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos al texto recortado */
+  }
+  
+  /* Ocultar elementos con la clase "hidden" */
+  .hidden {
+    display: none;
+  }
+  
+  /* Ajustar los encabezados */
+  h5 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Listado de partidos */
+  .ul-liga {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .ul-liga li {
+    padding: 10px;
+    margin-bottom: 0px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    }
+
+    .divPrincipal-Liga {
+        margin-top: 150px;
+    }
+
+}
+
